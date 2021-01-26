@@ -74,14 +74,14 @@
         <div class="image-upload-wrap">
             <input class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" />
             <div class="drag-text">
-                <!-- <img src="img/upload.svg" class="mt-5 pt-5 upload"> -->
+                <img src="images\click.svg" class="mt-5 pt-5 upload">
                 <h3 class="mb-5 pb-5 pt-4 upload-text">당신은 미남일까? 미녀일까?</h3>
             </div>
         </div>
         <div class="file-upload-content">
             <img class="file-upload-image" id="face-image" src="#" alt="your image" />
             <div id="loading" class="animated bounce">
-                <div class="spinner-border" role="status">
+                <div class="spinner-grow" role="status">
                     <span class="sr-only">Loading...</span>
                 </div>
                 <p class="text-center">순위 분석중...</p>
@@ -123,7 +123,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="adModalLabel"></h5>
+                    <h5 class="modal-title " id="adModalLabel" >외모에 관심이 많으시군요. 다시한번 더 궁금^^</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -225,6 +225,7 @@
             prediction.sort((a, b) => parseFloat(b.probability) - parseFloat(a.probability));
             console.log(prediction);            
             var resultTitle, resultExplain, resultCeleb;
+            let degreeNum; 
             if (document.getElementById("gender").checked) {
                 gtag('event', '미남미녀대첩 실행', {
                     'event_category': '미남미녀대첩 실행',
@@ -232,46 +233,55 @@
                 });
                 switch (prediction[0].className) {
                     case "1등급":
+                        degreeNum = "one"                        
                         resultTitle = "1등급"
                         resultExplain = "지금 당장 일 때려치고 연예계로 나가도 좋은 외모, 옆에 있어도 뿜어져나오는 분위기에 감탄하면서 바라볼 수준, 사실 본인 예쁜거 알지만 겸손하기까지 함..."
                         resultCeleb = ""
                         break;  
                     case "2등급":
+                        degreeNum = "two"  
                         resultTitle = "2등급"
                         resultExplain = "한번씩 눈이가는 수준의 외모, 본인도 알고 있는 미모 세상살이 살아오면서 미모 덕을 자주 봤을 법한 다이아등급 하지만 너무 자만하지 말자 한번씩 1등급을 만나면 다른 세상에 산다는걸 느끼게되니까"
                         resultCeleb = ""
                         break;  
                     case "3등급":
+                        degreeNum = "three"  
                         resultTitle = "3등급"
                         resultExplain = "나 정도면 괜찮지? 주변에서 예쁘다는 소리 좀 들어 본 수준, 예쁨의 마지노선이라고 할 수 있다 번호도 자주 달라하죠?"
                         resultCeleb = ""
                         break;  
                     case "4등급":
+                        degreeNum = "four"  
                         resultTitle = "4등급"
                         resultExplain = "내가 바로 평균! 평범한 얼굴은 나를 말하는 거지!, 호감형의 기준"
                         resultCeleb = ""
                         break;  
                     case "5등급":
+                        degreeNum = "five"  
                         resultTitle = "5등급"
                         resultExplain = "어~..? 평범? 평범한 편이지ㅎㅎ라고 말하는  평균보다 조금 떨어지는 등급, 사실 헤어스타일이나 다이어트 옷으로 커버 가능한 수준이니 포기하지 말 것!"
                         resultCeleb = ""
                         break;           
                     case "6등급":
+                        degreeNum = "six"  
                         resultTitle = "6등급"
                         resultExplain = "못 생긴걸 인지하고 있는 수준이지만 연애 결혼 문제는 없다."
                         resultCeleb = ""
                         break;           
                     case "7등급":
+                        degreeNum = "seven"  
                         resultTitle = "7등급"
                         resultExplain = "가뭄의 콩 나듯 소개팅가능 이쯤 되면 스타일로도 커버하기 힘든 수준 평균까지 올라가기 힘들지만 요즘 세상많이 좋아졌다. 힘내자"
                         resultCeleb = ""
                         break;           
                     case "8등급":
+                        degreeNum = "eight"  
                         resultTitle = "8등급"
                         resultExplain = "착하게 생겼다^^, 쟤 보다는 내가... 나을거라는 착각을 하는 수준 사실상 8,9등급 차이는 크게 없다."
                         resultCeleb = ""
                         break;           
                     case "9등급":
+                        degreeNum = "nine"  
                         resultTitle = "9등급"
                         resultExplain = "사실 1등급처럼 보기 힘든 얼굴 사실상 연애하기도 힘든 등급이다. 만약 연애를 한다면 그 사람을 놓치지 말고 결혼하라 두 번은 기회가 없을 수도 있지만 직업과 집안만 좋다면 머든 못하리 분발하자"
                         resultCeleb = ""
@@ -285,49 +295,58 @@
                 gtag('event', '미남미녀대첩 실행', {
                     'event_category': '미남미녀대첩 실행',
                     'event_label': '여자'
-                });                
+                });                               
                 switch (prediction[0].className) {
-                    case "1등급":                        
+                    case "1등급":
+                        degreeNum = "one"                        
                         resultTitle = "1등급"
                         resultExplain = "지금 당장 일 때려치고 연예계로 나가도 좋은 외모, 옆에 있어도 뿜어져나오는 분위기에 감탄하면서 바라볼 수준, 사실 본인 예쁜거 알지만 겸손하기까지 함..."
                         resultCeleb = ""
                         break;  
                     case "2등급":
+                        degreeNum = "two"  
                         resultTitle = "2등급"
                         resultExplain = "한번씩 눈이가는 수준의 외모, 본인도 알고 있는 미모 세상살이 살아오면서 미모 덕을 자주 봤을 법한 다이아등급 하지만 너무 자만하지 말자 한번씩 1등급을 만나면 다른 세상에 산다는걸 느끼게되니까"
                         resultCeleb = ""
                         break;  
                     case "3등급":
+                        degreeNum = "three"  
                         resultTitle = "3등급"
                         resultExplain = "나 정도면 괜찮지? 주변에서 예쁘다는 소리 좀 들어 본 수준, 예쁨의 마지노선이라고 할 수 있다 번호도 자주 달라하죠?"
                         resultCeleb = ""
                         break;  
                     case "4등급":
+                        degreeNum = "four"  
                         resultTitle = "4등급"
                         resultExplain = "내가 바로 평균! 평범한 얼굴은 나를 말하는 거지!, 호감형의 기준"
                         resultCeleb = ""
                         break;  
                     case "5등급":
+                        degreeNum = "five"  
                         resultTitle = "5등급"
                         resultExplain = "어~..? 평범? 평범한 편이지ㅎㅎ라고 말하는  평균보다 조금 떨어지는 등급, 사실 헤어스타일이나 다이어트 옷으로 커버 가능한 수준이니 포기하지 말 것!"
                         resultCeleb = ""
                         break;           
                     case "6등급":
+                        degreeNum = "six"  
                         resultTitle = "6등급"
                         resultExplain = "못 생긴걸 인지하고 있는 수준이지만 연애 결혼 문제는 없다."
                         resultCeleb = ""
                         break;           
                     case "7등급":
+                        degreeNum = "seven"  
                         resultTitle = "7등급"
                         resultExplain = "가뭄의 콩 나듯 소개팅가능 이쯤 되면 스타일로도 커버하기 힘든 수준 평균까지 올라가기 힘들지만 요즘 세상많이 좋아졌다. 힘내자"
                         resultCeleb = ""
                         break;           
                     case "8등급":
+                        degreeNum = "eight"  
                         resultTitle = "8등급"
                         resultExplain = "착하게 생겼다^^, 쟤 보다는 내가... 나을거라는 착각을 하는 수준 사실상 8,9등급 차이는 크게 없다."
                         resultCeleb = ""
                         break;           
                     case "9등급":
+                        degreeNum = "nine"  
                         resultTitle = "9등급"
                         resultExplain = "사실 1등급처럼 보기 힘든 얼굴 사실상 연애하기도 힘든 등급이다. 만약 연애를 한다면 그 사람을 놓치지 말고 결혼하라 두 번은 기회가 없을 수도 있지만 직업과 집안만 좋다면 머든 못하리 분발하자"
                         resultCeleb = ""
@@ -338,9 +357,9 @@
                         resultCeleb = ""
                 }
             }
-            var title = "<div class='" + prediction[0].className + "-animal-title'>" + resultTitle + "</div>"
-            var explain = "<div class='animal-explain pt-2'>" + resultExplain + "</div>"
-            var celeb = "<div class='" + prediction[0].className + "-animal-celeb pt-2 pb-2'>" + resultCeleb + "</div>"            
+            var title = "<div class='" + degreeNum + "-title'>" + resultTitle + "</div>"
+            var explain = "<div class='result-explain pt-2'>" + resultExplain + "</div>"
+            var celeb = "<div class='" + degreeNum + "-celeb pt-2 pb-2'>" + resultCeleb + "</div>"            
             $('.result-message').html(title + explain + celeb);
             var barWidth;
             for (let i = 0; i < maxPredictions; i++) {
@@ -352,7 +371,7 @@
                     barWidth = "2%"
                 }
                 var labelTitle;
-                var boxName;
+                let boxName;
                 switch (prediction[i].className) {
                     case "1등급":
                         boxName = "one"
@@ -393,7 +412,7 @@
                     default:
                         labelTitle = "알수없음"
                 }
-                var label = "<div class='animal-label d-flex align-items-center'>" + labelTitle + "</div>"
+                var label = "<div class='result-label d-flex align-items-center'>" + labelTitle + "</div>"
                 var bar = "<div class='bar-container position-relative container'><div class='" + boxName + "-box'> \
                         </div><div class='d-flex justify-content-center align-items-center " + boxName + "-bar' style='width: " + barWidth + "'> \
                         <span class='d-block percent-text'>" + Math.round(prediction[i].probability.toFixed(2) * 100) + "%</span></div></div>"

@@ -63,13 +63,13 @@ body {
       position: relative;
       object-fit: contain;
       border-radius: 10px;
-      border: dashed 1.5px #35465d;
+      border: solid 1.5px #35465d;
       background-color: #ffffff;
   }
   
   .image-dropping,
   .image-upload-wrap:hover {
-      background-color: #35465d82;
+      background-color: #96bccf82;
       border: 1.5px dashed #ffffff;
   }
   
@@ -179,7 +179,7 @@ body {
   }
   
   .upload {
-      width: 20%;
+      width: 5%;
   }
   
   .upload-text {
@@ -322,8 +322,8 @@ body {
     font-size: 1rem;
     color: #ffffff;
   }
-  .animal-label {
-      width: 20%;
+  .result-label {
+      width: 30%;
       text-align: left;
       height: 2rem;
   }
@@ -336,55 +336,55 @@ body {
   }
   
   
-  .animal-explain {
+  .result-explain {
       font-size: 1.5rem;
   }
-  .dinosaur-animal-title {
+  .one-title {
       color: #3ba363;
   }
-  .dinosaur-animal-celeb {
-      color: #3ba363;
-      font-size: 1.2rem;
-  }
-  .deer-animal-title {
-      color: #3ba363;
-  }
-  .deer-animal-celeb {
+  .one-celeb {
       color: #3ba363;
       font-size: 1.2rem;
   }
-  .cat-animal-title {
+  .two-title {
+      color: #3ba363;
+  }
+  .two-celeb {
+      color: #3ba363;
+      font-size: 1.2rem;
+  }
+  .three-title {
       color: #ff6c0a;
   }
-  .cat-animal-celeb {
+  .three-celeb {
       color: #ff6c0a;
       font-size: 1.2rem;
   }
-  .dog-animal-title {
+  .four-title {
       color: #548dd4;
   }
-  .dog-animal-celeb {
+  .four-celeb {
       color: #548dd4;
       font-size: 1.2rem;
   }
-  .rabbit-animal-title {
+  .five-title {
       color: #e56995;
   }
-  .rabbit-animal-celeb {
+  .five-celeb {
       color: #e56995;
       font-size: 1.2rem;
   }
-  .bear-animal-title {
+  .six-title {
       color: #9b6b43;
   }
-  .bear-animal-celeb {
+  .six-celeb {
       color: #9b6b43;
       font-size: 1.2rem;
   }
-  .fox-animal-title {
+  .seven-title {
       color: #31849b;
   }
-  .fox-animal-celeb {
+  .seven-celeb {
       color: #31849b;
       font-size: 1.2rem;
   }
