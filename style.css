@@ -158,20 +158,20 @@ body {
   
   
   .youtube-link {
-      font-size: 1.5rem;
-      line-height: 1.71;
-      text-align: center;
-      color: #f73737;
-      text-decoration: underline;
-  }
-  
-  .youtube-link:hover {
-      font-size: 1.5rem;
-      line-height: 1.71;
-      text-align: center;
-      color: #f73737;
-      text-decoration: underline;
-  }
+    font-size: 1rem;
+    line-height: 1.71;
+    text-align: center;
+    color: #424242;
+    text-decoration: underline;
+}
+
+.youtube-link:hover {
+    font-size: 1rem;
+    line-height: 1.71;
+    text-align: center;
+    color: #9b9b9b;
+    text-decoration: underline;
+}
   
   .youtube-icon {
       width: 30px;
