@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -8,18 +8,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Single+Day&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <title>미남미녀 대첩</title>
-    <meta name="title" content="미남미녀 등급대첩">
-    <meta name="subject" content="나는 얼굴로 몇등급일까?">
-    <meta name="keywords" content="미남, 미녀, 순위, 얼굴, 등급">
+    <title>얼굴 등급 테스트</title>
+    <meta name="title" content="외모(얼굴) 등급 테스트">
+    <meta name="subject" content="나는 외모(얼굴)로 몇등급일까?">
+    <meta name="keywords" content="얼굴 등급 테스트, 외모 등급 테스트, 인공지능 얼굴 분석, 미남, 미녀, 순위, 얼굴, 등급, 테스트, 외모 등급, 얼굴 등급">
     <meta name="author" content="원더맨777">
     <link rel="stylesheet" href="style.css">
     <link rel="canonical" href="https://hansomeface.netlify.app/" />
     <meta property="og:url" content="https://hansomeface.netlify.app/" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="미남미녀 대첩" />
-    <meta property="og:description" content="미남미녀 대첩 - 사진은 저장되지 않아요." />
-    <!-- <meta property="og:image" content="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fk.kakaocdn.net%2Fdn%2Fc0eq42%2FbtqCQpiFhFn%2F8KPaOP9q8PXpJFRL7if55K%2Fimg.jpg" /> -->
+    <meta property="og:title" content="외모(얼굴) 등급 테스트" />
+    <meta property="og:description" content="사진으로 분석하는 인공지능 외모(얼굴) 등급 테스트, 재미로 외모(얼굴) 등급을 분석하세요. 인공지능(인공이)이 나의 외모(얼굴)를 분석합니다." />
     <meta name="naver-site-verification" content="6161b9a9bf892ade3d3ad7b69b2ee4aecb502321" />
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
@@ -37,7 +36,7 @@
 
 <body class="container">
     <section class="section">
-        <h1 class="title">미남미녀 등급테스트</h1>
+        <h1 class="title">외모지상주의</h1>
         <h2 class="subtitle">인공이가 알려주는 미남미녀 순위</h2>
         <h2 class="sr-only">나는 미남일까? 미인일까?</h2>
         <p class="sr-only">연예인보다 미남일까? 미인일까?</p>
@@ -54,7 +53,7 @@
         <div class="mt-2 container d-flex justify-content-center ">
             <p class="d-flex align-items-center pr-3">미녀</p>
             <div>
-                <input type="checkbox" id="gender">
+                <input type="checkbox" id="gender" onclick="changeIcon();">
                 <label for="gender">
                     <span class="knob">
                         <i></i>
@@ -74,7 +73,8 @@
         <div class="image-upload-wrap">
             <input class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" />
             <div class="drag-text">
-                <img src="images\click.svg" class="mt-5 pt-5 upload">
+                <img src="images\upload_ficon.png" class="mt-5 pt-5 upload">
+                <img src="images\click.svg" class="mt-5 pt-5 upload-click">
                 <h3 class="mb-5 pb-5 pt-4 upload-text">당신은 미남일까? 미녀일까?</h3>
             </div>
         </div>
@@ -148,6 +148,13 @@
         </div>
     </div>
     <script>
+        function changeIcon(){
+            if(document.getElementById("gender").checked){
+                $('.upload').attr('src', "images\\upload_micon.png");
+            }else{
+                $('.upload').attr('src', "images\\upload_ficon.png");
+            }
+        }
         function gaReload1() {
             gtag('event', '다른 사진으로 재시도 1차', {
                 'event_category': '다른 사진으로 재시도'
@@ -206,8 +213,8 @@
     </script>
     <script type="text/javascript">
         let URL;
-        const urlMale = "https://teachablemachine.withgoogle.com/models/QB9CyXyuZ/";
-        const urlFemale = "https://teachablemachine.withgoogle.com/models/QB9CyXyuZ/";
+        const urlMale = "https://teachablemachine.withgoogle.com/models/S8O_FEJ5T/";
+        const urlFemale = "https://teachablemachine.withgoogle.com/models/S8O_FEJ5T/";
         let model, webcam, labelContainer, maxPredictions;
         async function init() {
             if (document.getElementById("gender").checked) {
@@ -234,7 +241,7 @@
             var resultTitle, resultExplain, resultCeleb;
             let degreeNum; 
             if (document.getElementById("gender").checked) {
-                gtag('event', '미남미녀대첩 실행', {
+                gtag('event', '미남 실행', {
                     'event_category': '미남미녀대첩 실행',
                     'event_label': '남자'
                 });
@@ -299,25 +306,25 @@
                         resultCeleb = ""
                 }
             } else {
-                gtag('event', '미남미녀대첩 실행', {
+                gtag('event', '미녀 실행', {
                     'event_category': '미남미녀대첩 실행',
                     'event_label': '여자'
                 });                               
                 switch (prediction[0].className) {
                     case "1등급":
                         degreeNum = "one"                        
-                        resultTitle = "1등급"
+                        resultTitle = "천상계"
                         resultExplain = "지금 당장 일 때려치고 연예계로 나가도 좋은 외모, 옆에 있어도 뿜어져나오는 분위기에 감탄하면서 바라볼 수준, 사실 본인 예쁜거 알지만 겸손하기까지 함..."
                         resultCeleb = ""
                         break;  
                     case "2등급":
                         degreeNum = "two"  
-                        resultTitle = "2등급"
+                        resultTitle = "상타"
                         resultExplain = "한번씩 눈이가는 수준의 외모, 본인도 알고 있는 미모 세상살이 살아오면서 미모 덕을 자주 봤을 법한 다이아등급 하지만 너무 자만하지 말자 한번씩 1등급을 만나면 다른 세상에 산다는걸 느끼게되니까"
                         resultCeleb = ""
                         break;  
                     case "3등급":
-                        degreeNum = "three"  
+                        degreeNum = "평타"  
                         resultTitle = "3등급"
                         resultExplain = "나 정도면 괜찮지? 주변에서 예쁘다는 소리 좀 들어 본 수준, 예쁨의 마지노선이라고 할 수 있다 번호도 자주 달라하죠?"
                         resultCeleb = ""
