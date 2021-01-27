@@ -179,8 +179,12 @@ body {
   }
   
   .upload {
-      width: 5%;
+      width: 20%;
   }
+
+  .upload-click {
+    width: 3%;
+}
   
   .upload-text {
       width: 58%;

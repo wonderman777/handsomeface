@@ -54,7 +54,7 @@
         <div class="mt-2 container d-flex justify-content-center ">
             <p class="d-flex align-items-center pr-3">미녀</p>
             <div>
-                <input type="checkbox" id="gender">
+                <input type="checkbox" id="gender" onclick="changeIcon();">
                 <label for="gender">
                     <span class="knob">
                         <i></i>
@@ -74,7 +74,8 @@
         <div class="image-upload-wrap">
             <input class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" />
             <div class="drag-text">
-                <img src="images\click.svg" class="mt-5 pt-5 upload">
+                <img src="images\upload_ficon.png" class="mt-5 pt-5 upload">
+                <img src="images\click.svg" class="mt-5 pt-5 upload-click">
                 <h3 class="mb-5 pb-5 pt-4 upload-text">당신은 미남일까? 미녀일까?</h3>
             </div>
         </div>
@@ -148,6 +149,13 @@
         </div>
     </div>
     <script>
+        function changeIcon(){
+            if(document.getElementById("gender").checked){
+                $('.upload').attr('src', "images\\upload_micon.png");
+            }else{
+                $('.upload').attr('src', "images\\upload_ficon.png");
+            }
+        }
         function gaReload1() {
             gtag('event', '다른 사진으로 재시도 1차', {
                 'event_category': '다른 사진으로 재시도'
@@ -234,7 +242,7 @@
             var resultTitle, resultExplain, resultCeleb;
             let degreeNum; 
             if (document.getElementById("gender").checked) {
-                gtag('event', '미남미녀대첩 실행', {
+                gtag('event', '미남 실행', {
                     'event_category': '미남미녀대첩 실행',
                     'event_label': '남자'
                 });
@@ -299,25 +307,25 @@
                         resultCeleb = ""
                 }
             } else {
-                gtag('event', '미남미녀대첩 실행', {
+                gtag('event', '미녀 실행', {
                     'event_category': '미남미녀대첩 실행',
                     'event_label': '여자'
                 });                               
                 switch (prediction[0].className) {
                     case "1등급":
                         degreeNum = "one"                        
-                        resultTitle = "1등급"
+                        resultTitle = "천상계"
                         resultExplain = "지금 당장 일 때려치고 연예계로 나가도 좋은 외모, 옆에 있어도 뿜어져나오는 분위기에 감탄하면서 바라볼 수준, 사실 본인 예쁜거 알지만 겸손하기까지 함..."
                         resultCeleb = ""
                         break;  
                     case "2등급":
                         degreeNum = "two"  
-                        resultTitle = "2등급"
+                        resultTitle = "상타"
                         resultExplain = "한번씩 눈이가는 수준의 외모, 본인도 알고 있는 미모 세상살이 살아오면서 미모 덕을 자주 봤을 법한 다이아등급 하지만 너무 자만하지 말자 한번씩 1등급을 만나면 다른 세상에 산다는걸 느끼게되니까"
                         resultCeleb = ""
                         break;  
                     case "3등급":
-                        degreeNum = "three"  
+                        degreeNum = "평타"  
                         resultTitle = "3등급"
                         resultExplain = "나 정도면 괜찮지? 주변에서 예쁘다는 소리 좀 들어 본 수준, 예쁨의 마지노선이라고 할 수 있다 번호도 자주 달라하죠?"
                         resultCeleb = ""
